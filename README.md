@@ -27,9 +27,9 @@ You will need to create your own `.env` file with your own API keys in order to 
 App Command | Full Node command
 ------------|-------------------
 `concert-this`      | `node liri.js concert-this <artist/band name here>`
-`spotify-this-song` | `node liri.js spotify-this-song '<song name here>'`
-`movie-this`        | `node liri.js movie-this '<movie name here>'`
-`do-what-it-says`   | `node liri.js spotify-this-song '<song name here>'`
+`spotify-this-song` | `node liri.js spotify-this-song <song name here>`
+`movie-this`        | `node liri.js movie-this <movie name here>`
+`do-what-it-says`   | `node liri.js spotify-this-song <song name here>`
 
 #### concert-this
 
