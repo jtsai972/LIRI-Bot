@@ -1,24 +1,35 @@
 # LIRI-Bot
-An experiment with node. I'm just starting to learn node. I am also very tired. Better description later. Probably.
+An experiment with Node.js. I'm just starting to learn Node.js. I am also very tired. Better description later. Probably.
+
+(_In case you don't scroll down: you need to make your own `.env` file with your own keys_)
 
 ## Overview
-LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a _Language_ Interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives you back data. LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for movies.
+LIRI is like iPhone's SIRI. 
+
+However, while SIRI is a _**Speech**_ Interpretation and Recognition Interface, LIRI is a _**Language**_ Interpretation and Recognition Interface. 
+
+LIRI will be a command line Node.js app that takes in parameters and gives you back data. 
+
+LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for movies.
 
 ### About LIRI
-LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for movies.
+LIRI is a Node.js app that lacks a front-end currently. It's an experiment in pulling from APIs using Node.js and hiding keys as well as a way to dip my toes into Node.js
  
 ### About Me
 Because apparently this is a good thing to do. I'm the app developer. Tada. Amaze. Whoo. 
  
 ## Instructions
+### To Use
+You will need to create your own `.env` file with your own API keys in order to test this project. I won't be retrieving keys from firebase this time.
+
 ### Commands
-`concert-this`      - Full command: `node liri.js concert-this <artist/band name here>`
 
-`spotify-this-song` - Full command: `node liri.js spotify-this-song '<song name here>'`
-
-`movie-this`        - Full command: `node liri.js movie-this '<movie name here>'`
-
-`do-what-it-says`   - Full command: `node liri.js spotify-this-song '<song name here>'`
+App Command | Full Node command
+------------|-------------------
+`concert-this`      | `node liri.js concert-this <artist/band name here>`
+`spotify-this-song` | `node liri.js spotify-this-song '<song name here>'`
+`movie-this`        | `node liri.js movie-this '<movie name here>'`
+`do-what-it-says`   | `node liri.js spotify-this-song '<song name here>'`
 
 #### concert-this
 
@@ -62,9 +73,9 @@ LIRI will take the text inside of random.txt and then use it to call one of LIRI
   * Edit the text in random.txt to test out the feature for movie-this and concert-this.
  
 ## Tools
- * [Node-Spotify-API](https://www.npmjs.com/package/node-spotify-api)
- * [Axios](https://www.npmjs.com/package/axios)
- * [Moment](https://www.npmjs.com/package/moment)
- * [DotEnv](https://www.npmjs.com/package/dotenv)
- * [OMDB API](http://www.omdbapi.com) 
- * [Bands In Town API](http://www.artists.bandsintown.com/bandsintown-api)
+ * [Node Package - Axios](https://www.npmjs.com/package/axios)
+ * [Node Package - DotEnv](https://www.npmjs.com/package/dotenv)
+ * [Node Package - Moment](https://www.npmjs.com/package/moment)
+ * [Node Package - API - Spotify API](https://www.npmjs.com/package/node-spotify-api)
+ * [API - OMDB](http://www.omdbapi.com) 
+ * [API - Bands In Town](http://www.artists.bandsintown.com/bandsintown-api)
