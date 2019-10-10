@@ -7,6 +7,9 @@ require("dotenv").config();
 var keys = require("./keys.js");
 var spotify = new Spotify(keys.spotify); //example from assignment
 
+//formatting variables
+var n = "\n\n"; //(2 lines)
+var t = "\t"; //a tab
 
 //switch commands
 var cmd = process.argv[2],
@@ -54,7 +57,7 @@ function log(){
 }
 
 function err(str){
-
+  console.log(`Oops, there's a problem with the ${str} functionality!`)
   switch(str) {
     case "api":
       if (error.response) {
@@ -89,5 +92,5 @@ function err(str){
       break;
   }
 
-  console.log(`Oops, there's a problem with the ${str} functionality!`)
+
 }
