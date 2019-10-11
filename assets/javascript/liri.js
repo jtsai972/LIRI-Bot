@@ -1,65 +1,85 @@
-//Packages
-const axios = require("axios");
+console.log("Liri loaded");
 
+const fs = require("fs");
+
+//Packages
 require("dotenv").config();
+const axios = require("axios");
+const moment = require('moment');
+
+//API
+const Spotify = require('node-spotify-api');
 
 //keys
 var keys = require("./keys.js");
 var spotify = new Spotify(keys.spotify); //example from assignment
 
 //formatting variables
-var n = "\n\n"; //(2 lines)
-var t = "\t"; //a tab
+var cmdTxt = "Command: node run.js ";
 
-//switch commands
-var cmd = process.argv[2],
-    search = process.argv[3];
+var breakEquals = "==========================\n",
+    breakDashes = "--------------------------\n";
 
-switch(cmd.toLowerCase) {
-  case "concert-this":
-    concert();
-    break;
+var concertFn = function concert(search, name){
+  var queryURL = `https://rest.bandsintown.com/artists/${search}/events?app_id=codingbootcamp`;
 
-  case "spotify-this-song":
-    spotify();
-    break;
+  var cmd = cmdTxt + "concert-this " + name;
+
+  var starterText = 
+    breakEquals +
+      "Searching for concerts!\n" + 
+    breakEquals +"\n"+ 
+      "Upcoming Events\n" + 
+    breakDashes;
+
+  console.log(starterText);
+  var printArr = [cmd, starterText];
+
+  query(queryURL).then(
+    function(events) {
+      for( let i = 0; i < events.length; i++) {
+        var venue = events[i].venue;
+        var date = moment(events[i].datetime).format("dddd, MMMM Do YYYY, h:mma");
+        var location = `${venue.city}, ${venue.region}, ${venue.country}`;
+        
+        var venueText = 
+          "Venue:     " + venue.name + "\n" +
+          "Location:  " + location.replace(" , ", " ") + "\n" + 
+          "Date:      " + date + "\n";
+
+        console.log(venueText);
+        printArr.push(venueText + "\n");
+      }
+    }
+  ).then(function() {
+    log(printArr);
+    console.log(printArr);
+  });
   
-  case "movie-this":
-    movie();
-    break;
-
-  case "do-what-it-says":
-    whatItSays();
-    break;
-
-  default:
-    console.log("Sorry, I don't think I know that command.");
 }
 
-function concert(){
-  console.log("Searching for concerts!");
-}
-
-function spotify(){
+var spotifyFn = function spotify(){
   console.log("Retrieving song details!");
 }
 
-function movie(){
+var movieFn = function movie(){
   console.log("Grabbing movie information");
 }
 
-function whatItSays(){
+var whatItSaysFn = function whatItSays(){
   console.log("What does the random text say?");
 }
 
-function log(){
-  console.log("Logging commands and results!")
-}
-
-function err(str){
-  console.log(`Oops, there's a problem with the ${str} functionality!`)
-  switch(str) {
-    case "api":
+//Querying
+function query(queryURL) {
+  return axios 
+    .get(queryURL) 
+    .then(
+      function(response) {
+        // console.log(response.data);
+        return response.data;
+      })
+    .catch(function(error) {
       if (error.response) {
         console.log("---------------Data---------------");
         console.log(error.response.data);
@@ -73,24 +93,34 @@ function err(str){
         console.log("Error", error.message);
       }
       console.log(error.config);
-      break;
-
-    case "concert":
-      console.log("Oops, there's a problem with the concert functionality!")
-      break;
-
-    case "spotify":
-      break;
-
-    case "movie":
-      break;
-
-    case "whatItSays":
-      break;
-
-    case "log":
-      break;
-  }
-
-
+    });
 }
+
+//Logging
+function log(strArr){
+  console.log("Logging commands and results!")
+
+  var logLoc = "./assets/text/log.txt";
+
+  for( let i = 0; i < strArr.length+1; i++ ) {
+    //making sure this is in order
+    if(i < strArr.length) {
+      fs.appendFile(logLoc, strArr[i], function(error) {
+        if(error){console.log(error);};
+      });
+    } else {
+      fs.appendFile(logLoc, "\n\n" + breakEquals + "\n\n", function(error) {
+        if(error){console.log(error);};
+      });
+    }
+  }
+  
+  
+}
+
+
+//exports
+exports.concert = concertFn;
+exports.spotify = spotifyFn;
+exports.movie = movieFn;
+exports.whatItSays = whatItSaysFn;

@@ -1,0 +1,59 @@
+==========================
+Searching for concerts!
+==========================
+
+Upcoming Events
+--------------------------
+Command: node run.js concert-this The Band CaminoVenue:     The Mill & Mine
+Location:  Knoxville, TN, United States
+Date:      Tuesday, October 15th 2019, 7:00pm
+
+Venue:     Zilker Metropolitan Park
+Location:  Austin, TX, United States
+Date:      Friday, October 11th 2019, 7:00pm
+
+Venue:     House of Blues Houston
+Location:  Houston, TX, United States
+Date:      Saturday, October 12th 2019, 7:00pm
+
+Venue:     House of Blues Dallas
+Location:  Dallas, TX, United States
+Date:      Sunday, October 13th 2019, 7:00pm
+
+Venue:     Variety Playhouse
+Location:  Atlanta, GA, United States
+Date:      Thursday, October 17th 2019, 7:00pm
+
+Venue:     Neighborhood Theatre
+Location:  Charlotte, NC, United States
+Date:      Saturday, October 19th 2019, 7:00pm
+
+Venue:     Georgia Theatre
+Location:  Athens, GA, United States
+Date:      Wednesday, October 16th 2019, 7:00pm
+
+Venue:     Cat's Cradle
+Location:  Carrboro, NC, United States
+Date:      Sunday, October 20th 2019, 7:00pm
+
+Venue:     The Wilbury
+Location:  Tallahassee, FL, United States
+Date:      Wednesday, October 23rd 2019, 7:00pm
+
+Venue:     The Abbey
+Location:  Orlando, FL, United States
+Date:      Tuesday, October 22nd 2019, 7:00pm
+
+Venue:     The Dome
+Location:  London, United Kingdom
+Date:      Monday, November 11th 2019, 7:00pm
+
+Venue:     The Deaf Institute
+Location:  Manchester, United Kingdom
+Date:      Tuesday, November 12th 2019, 7:00pm
+
+
+
+==========================
+
+
