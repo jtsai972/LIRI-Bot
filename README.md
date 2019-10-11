@@ -3,6 +3,12 @@ An experiment with Node.js. I'm just starting to learn Node.js. I am also very t
 
 (_In case you don't scroll down: you need to make your own `.env` file with your own keys_)
 
+## To Do List:
+ - [ ] Update Readme with a ToDo List
+ - [ ] Update Readme with Inquirer Stuff
+ - [ ] Shorten ReadMe
+ - [ ] Eat Lunch First
+
 ## Overview
 LIRI is like iPhone's SIRI. 
 
@@ -71,11 +77,6 @@ LIRI will take the text inside of random.txt and then use it to call one of LIRI
 
   * It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
   * Edit the text in random.txt to test out the feature for movie-this and concert-this.
-
-## To Do List:
- - [ ] Update Readme with a ToDo List
- - [ ] Update Readme with Inquirer Stuff
- - [ ] Eat Lunch First
 
 ## Tools
  * [Node Package - Axios](https://www.npmjs.com/package/axios)
