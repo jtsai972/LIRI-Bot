@@ -24,12 +24,12 @@ You will need to create your own `.env` file with your own API keys in order to 
 
 ### Commands
 
-App Command | Full Node command
+App Command | Short Description
 ------------|-------------------
-`concert-this`      | `node liri.js concert-this <artist/band name here>`
-`spotify-this-song` | `node liri.js spotify-this-song <song name here>`
-`movie-this`        | `node liri.js movie-this <movie name here>`
-`do-what-it-says`   | `node liri.js spotify-this-song <song name here>`
+`concert-this`      | searches Bands in Town API for an artist's events
+`spotify-this-song` | searches Spotify for info about a band or artist
+`movie-this`        | Searches for info about the movie you entered
+`do-what-it-says`   | runs the text in random.txt
 
 #### concert-this
 
@@ -71,10 +71,16 @@ LIRI will take the text inside of random.txt and then use it to call one of LIRI
 
   * It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
   * Edit the text in random.txt to test out the feature for movie-this and concert-this.
- 
+
+## To Do List:
+ - [ ] Update Readme with a ToDo List
+ - [ ] Update Readme with Inquirer Stuff
+ - [ ] Eat Lunch First
+
 ## Tools
  * [Node Package - Axios](https://www.npmjs.com/package/axios)
  * [Node Package - DotEnv](https://www.npmjs.com/package/dotenv)
+ * [Node Package - Inquirer](https://www.npmjs.com/package/inquirer)
  * [Node Package - Moment](https://www.npmjs.com/package/moment)
  * [Node Package - API - Spotify API](https://www.npmjs.com/package/node-spotify-api)
  * [API - OMDB](http://www.omdbapi.com) 
