@@ -133,7 +133,7 @@ function query(queryURL) {
     .get(queryURL) //Query
     .then( //After query is made
       function(response) {
-        // console.log(response.data);
+        console.log(response.data);
         return response.data;
       })
     .catch(function(error) { //If Query fails
