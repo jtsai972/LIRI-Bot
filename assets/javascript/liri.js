@@ -1,4 +1,4 @@
-console.log("Liri loaded");
+console.log("Liri loaded"); //letting us know this works
 
 const fs = require("fs");
 
@@ -15,26 +15,30 @@ var keys = require("./keys.js");
 var Spotify = new spotifyAPI(keys.spotify); //example from assignment
 
 //formatting variables
-var cmdTxt = "Command: node run.js ";
+var cmdTxt = "Command: node run.js ",
+    whatTxt = cmdTxt + "do-what-it-says";
 
 var breakEquals = "==========================\n",
     breakDashes = "--------------------------\n";
 
-var concert = function(name){
+//getting concert info
+var concert = function(name, isWhat){
   var queryURL = `https://rest.bandsintown.com/artists/${name}/events?app_id=codingbootcamp`;
 
-  var cmd = cmdTxt + "concert-this " + name + "\n\n";
+  var cmd = cmdTxt + "concert-this " + name + "\n";
 
-  var starterText = 
-    `${breakEquals} 
-      Searching for concerts!\n 
-    ${breakEquals}\n
-      Upcoming Events\n
-    ${breakDashes}`;
+  let starterText = 
+    breakEquals + 
+      "Searching for concerts!\n" + 
+    breakEquals +
+      "Upcoming Events\n" +
+    breakDashes;
+  
+  //if this ran "What it says"
+  let printArr = isWhat ? 
+    [whatTxt, cmd, starterText] : [cmd, starterText];
 
-  console.log(starterText);
-  var printArr = [cmd, starterText];
-
+  //querying
   query(queryURL).then(
     function(events) {
       for( let i = 0; i < events.length; i++) {
@@ -47,84 +51,84 @@ var concert = function(name){
           "Location:  " + location.replace(" , ", " ") + "\n" + 
           "Date:      " + date + "\n";
 
-        console.log(venueText);
-        printArr.push(venueText + "\n");
+        printArr.push(venueText);
       }
     }
-  ).then(function() {
-    //log(printArr);
-    console.log(printArr);
+  ).then( function() {
+    log(printArr);
   });
   
 }
 
-var spotifyFn = function(name){
+//getting spotify info
+var spotifyFn = function(name, isWhat){
   let starterText = 
     breakEquals + 
-      "Retrieving song details!" + 
-    breakEquals + 
-      "\n";
+      "Retrieving song details!\n" + 
+    breakEquals;
 
-  console.log(starterText);
-  log(starterText);
+  let cmd = cmdTxt + "spotify-this-song " + name + "\n";
+
+  //if this ran "What it says"
+  let printArr = isWhat ? 
+    [whatTxt, cmd, starterText] : [cmd, starterText];
 
   Spotify
     .search({ type: 'track', query: name })
-    .then(function(response) {
+    .then( function(response) {
       //console.log(response.tracks);
       let track = response.tracks.items[0];
       let album = track.album;
       //console.log(track);
 
-      let printArr = [
-        breakDashes,
+      printArr = printArr.concat([
         preview = "Preview link: " + album.external_urls.spotify,
         artist = "Artist:       " + album.artists[0].name,
         song = "Song:         " + track.name,
         albumName = "Album:        " + album.name
-      ]
-      for(let i = 0; i < printArr.length; i++) {
-        console.log(printArr[i]);
-        log(printArr[i]);
-      }
+      ]);
+    }).then( function() {
+      log(printArr);
     })
-    .catch(function(err) {
+    .catch( function(err) {
       console.log(err);
     });
 }
 
-var movie = function (search){
-  console.log("Grabbing movie information");
-  var queryURL = `https://www.omdbapi.com/?t=${search}&y=&plot=short&apikey=trilogy`;
+//Getting movie info
+var movie = function (name, isWhat){
+  let starterText = 
+    breakEquals + 
+      "Grabbing movie information\n" + 
+    breakEquals;
+
+  let cmd = cmdTxt + "movie-this " + name + "\n";
+
+  //if this ran "What it says"
+  let printArr = isWhat ? 
+    [whatTxt, cmd, starterText] : [cmd, starterText];
+
+  var queryURL = `https://www.omdbapi.com/?t=${name}&y=&plot=short&apikey=trilogy`;
 
   query(queryURL).then(
     function(movie) {
-      console.log(movie);
-      console.log(breakDashes);
-      console.log(`Title: ${movie.Title}`);
-      console.log(`Release year: ${movie.Year}`);
-      console.log(`IMDB Rating: ${movie.Ratings[0].Value}`);
-      console.log(`Rotten Tomatoes Rating: ${movie.Ratings[1].Value}`);
-      console.log(`Country: ${movie.Country}`);
-      console.log(`Language: ${movie.Language}`);
-      console.log(`Plot: ${movie.Plot}`);
-      console.log(`Actors: ${movie.Actors}`);
-    }
-  );
-}
+      // console.log(movie);
+      // console.log(breakDashes);
 
-var whatItSays = function(){
-  console.log("What does the random text say?");
-  fs.readFile(
-    "./assets/text/random.txt", 
-    "utf8", 
-    function(error, data) {
-      if (error) { return console.log(error); }
-      console.log(data);
-      let test = data.split(",");
-      console.log(test);
+      printArr = printArr.concat([
+        `Title: ${movie.Title}`,
+        "Release year: " + movie.Year,
+        `IMDB Rating: ${movie.Ratings[0].Value}`,
+        `Rotten Tomatoes Rating: ${movie.Ratings[1].Value}`,
+        `Country: ${movie.Country}`,
+        `Language: ${movie.Language}`,
+        `Plot: ${movie.Plot}`,
+        `Actors: ${movie.Actors}`
+      ])
     }
-  );
+  ).then(function() {
+    log(printArr);
+  });
 }
 
 //Querying
@@ -154,28 +158,35 @@ function query(queryURL) {
 }
 
 //Logging
-function log(strArr){
+function log(arr){
   console.log("Logging commands and results!")
 
   var logLoc = "./assets/text/log.txt";
 
-  for( let i = 0; i < strArr.length+1; i++ ) {
+  //printing out console results and logging them
+  for( let i = 0; i < arr.length; i++ ) {
     //making sure this is in order
-    if(i < strArr.length) {
-      fs.appendFileSync(logLoc, strArr[i], function(error) {
+    if(i < arr.length) {
+      console.log(arr[i]);
+      fs.appendFileSync(logLoc, arr[i] + "\n", function(error) {
         if(error){console.log(error);};
       });
     } else {
+      console.log("Error with the logging");
       fs.appendFileSync(logLoc, "\n\n" + breakEquals + "\n\n", function(error) {
         if(error){console.log(error);};
       });
     }
   }
-}
 
+  //Adding a divider to the end
+  fs.appendFileSync(logLoc, "\n" + breakDashes + "\n", function(error) {
+    if(error){console.log(error);};
+  });
+}
 
 //exporting stuff (to run.js)
 exports.concert = concert;
 exports.spotify = spotifyFn;
 exports.movie = movie;
-exports.whatItSays = whatItSays;
+//exports.whatItSays = whatItSays;

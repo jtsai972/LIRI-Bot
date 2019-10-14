@@ -1,10 +1,13 @@
 //Maybe make a system to add date to log.txt?
 const liri = require("./assets/javascript/liri.js");
 const inquirer = require("inquirer");
+const fs = require("fs");
 
 //Old stuff I left in just in case
 let defaultCmd = process.argv[2],
     defaultName = process.argv.slice(3).join(" ");
+
+let isWhat = false;
 
 //checking if someone entered a command.
 !defaultCmd ? updated() : legacy(); 
@@ -41,7 +44,7 @@ function updated() {
         switch(cmd) {
             //running the what it says command
             case choiceDoWhat: 
-                liri.whatItSays(); 
+                whatItSays();
                 break;
 
             //passing the searching function the topic, function name, and default search query for concerts
@@ -91,29 +94,29 @@ function searching(topic, fn, base) {
 }
 
 //Left default assignment stuff just in case my readme isn't actually read.
-function legacy() {
-    console.log("running legacy functions"); 
+function legacy(defaultCmd, defaultName, isWhat) {
+    //console.log("running legacy switch"); 
 
     switch(defaultCmd) {
         //Setting up legacy stuff
         //concert-this
         case "concert-this":
-            legacySearch("concert", "The Chainsmokers");
+            legacySearch("concert", "The Chainsmokers", defaultName, isWhat);
             break;
 
         //spotify-this-song
         case "spotify-this-song":
-            legacySearch("spotify", "Ace of Base The Sign");
+            legacySearch("spotify", "Ace of Base The Sign", defaultName, isWhat);
             break;
 
         //movie-this
         case "movie-this":
-            legacySearch("movie", "Mr. Nobody");
+            legacySearch("movie", "Mr. Nobody", defaultName, isWhat);
             break;
 
         //do-what-it-says
         case "do-what-it-says":
-            liri.whatItSays(); 
+            whatItSays();
             break;
 
         //if legacy stuff is going
@@ -124,14 +127,28 @@ function legacy() {
 }
 
 //I don't need inquirerer for this
-function legacySearch(fn, base) {
+function legacySearch(fn, base, defaultName, isWhat) {
+    //console.log("Running legacy search");
     let name = defaultName;
     let chk = name === ""; //if the search term string is empty
-    console.log(name);
+    //console.log(name);
 
     //passing this to liri.js
     //taking the function name (parameter 2) we gave it to run [fn]
     //and then checking to see if the search is an empty string (chk ? base: name)
     //if it's an empty string, pass it the default search term (parameter 3), otherwise, pass it the search term we were given
-    liri[fn](chk ? base : name);
+    liri[fn](chk ? base : name, isWhat);
+}
+
+function whatItSays(){
+    console.log("What does the random text say?");
+    fs.readFile("./assets/text/random.txt", "utf8", function(error, data) {
+        if (error) {
+            return console.log(error);
+        }
+        //console.log(data);
+        let resArr = data.replace(/"/g, "").split(",");
+        legacy(resArr[0].trim(), resArr[1].trim(), true);
+
+    })
 }
