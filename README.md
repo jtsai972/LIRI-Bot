@@ -88,8 +88,7 @@ LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for mov
  * [Node Package - API - Spotify API](https://www.npmjs.com/package/node-spotify-api)
  * [API - OMDB](http://www.omdbapi.com) 
  * [API - Bands In Town](http://www.artists.bandsintown.com/bandsintown-api)
-
-
+ * [othneildrew - Best README Template](https://github.com/othneildrew/Best-README-Template)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -121,6 +120,8 @@ There are two ways to use it, in one way, you can type out the legacy commands t
 Run this in the terminal using `node run.js` and LIRI will bring up an inquirer prompt.
 
 If you want to use the legacy commands you can simply run `node run.js <legacy command> <search term>`
+
+You can find some example images in the [images folder](https://github.com/jtsai972/LIRI-Bot/tree/master/assets/images) `assets>images`
 
 ### Legacy Commands
 

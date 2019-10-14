@@ -1,4 +1,4 @@
-console.log("Liri loaded"); //letting us know this works
+//console.log("Liri loaded"); //letting us know this works
 
 const fs = require("fs");
 
@@ -159,7 +159,7 @@ function query(queryURL) {
     //After query is made
     .then( 
       function(response) {
-        console.log(response.data);
+        //console.log(response.data);
         return response.data;
       })
     //If Query fails
@@ -183,7 +183,7 @@ function query(queryURL) {
 //Logging
 function log(arr){
   //Letting us know we're running the log function
-  console.log("Logging commands and results!")
+  //console.log("Logging commands and results!")
 
   //file path to the log.txt
   var logLoc = "./assets/text/log.txt";
