@@ -137,18 +137,24 @@ function legacySearch(fn, base, defaultName, isWhat) {
     //taking the function name (parameter 2) we gave it to run [fn]
     //and then checking to see if the search is an empty string (chk ? base: name)
     //if it's an empty string, pass it the default search term (parameter 3), otherwise, pass it the search term we were given
+    //parameter 4 is just a bool to keep track of whether this was called by what-it-says
     liri[fn](chk ? base : name, isWhat);
 }
 
 function whatItSays(){
+    //letting us know this function ran
     console.log("What does the random text say?");
-    fs.readFile("./assets/text/random.txt", "utf8", function(error, data) {
-        if (error) {
-            return console.log(error);
-        }
-        //console.log(data);
-        let resArr = data.replace(/"/g, "").split(",");
-        legacy(resArr[0].trim(), resArr[1].trim(), true);
 
+    //Reading the random.txt file
+    fs.readFile("./assets/text/random.txt", "utf8", function(error, data) {
+        if (error) { return console.log(error); }
+
+        //console.log(data);
+
+        //create an array called resArr that takes the data, replaces all quotation marks within it, and splits it based on a comma
+        let resArr = data.replace(/"/g, "").split(",");
+
+        //run the legacy function with the command, search, and a bool to let us know this came from the what it says function
+        legacy(resArr[0].trim(), resArr[1].trim(), true);
     })
 }
