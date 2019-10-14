@@ -6,6 +6,9 @@ const inquirer = require("inquirer");
 let defaultCmd = process.argv[2],
     defaultName = process.argv.slice(2).join("+");
 
+if(defaultCmd !== "") {
+
+} 
 
 //Setting up choices
 let choiceConcert = "Concert this!",
@@ -54,6 +57,7 @@ inquirer.prompt([
             searching("movie", "movie", "Mr. Nobody");
             break;
 
+        //default
         default:
             break;
     }
@@ -81,4 +85,44 @@ function searching(topic, fn, base) {
         //Tl;dr, passing the info we got to liri[functionName]
         
     })
+}
+
+function legacy() {
+    var name = response.name;//getting the search term
+    let chk = name === ""; //if the search term string is empty
+    console.log(name);
+
+    //passing this to liri.js
+    //taking the function name (parameter 2) we gave it to run [fn]
+    //and then checking to see if the search is an empty string (chk ? base: name)
+    //if it's an empty string, pass it the default search term (parameter 3), otherwise, pass it the search term we were given
+    liri[fn](chk ? base : name);
+
+    switch(defaultCMD) {
+        //Setting up legacy stuff
+        //concert-this
+        case "concert-this":
+            searching("artist", "concert", "The Chainsmokers");
+            break;
+
+        //spotify-this-song
+        case "spotify-this-song":
+            searching("song", "spotify", "Ace of Base The Sign");
+            break;
+
+        //movie-this
+        case "movie-this":
+            searching("movie", "movie", "Mr. Nobody");
+            break;
+
+        //do-what-it-says
+        case "do-what-it-says":
+            liri.whatItSays(); 
+            break;
+
+        //if legacy stuff is going
+        default:
+            console.log("Sorry, I don't know this command");
+            break;
+    }
 }

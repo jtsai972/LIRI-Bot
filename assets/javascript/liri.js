@@ -121,6 +121,8 @@ var whatItSays = function(){
     function(error, data) {
       if (error) { return console.log(error); }
       console.log(data);
+      let test = data.split(",");
+      console.log(test);
     }
   );
 }
