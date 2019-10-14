@@ -32,14 +32,10 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/jtsai972/LIRI-Bot">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
   <h3 align="center">LIRI Bot</h3>
 
   <p align="center">
-    Siri but for Language
+    Siri but not really
     <br />
     <a href="https://github.com/jtsai972/LIRI-Bot"><strong>Explore the docs »</strong></a>
     <br />
@@ -120,7 +116,7 @@ npm install
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-There are two ways to use it, in one way, you can type out the legacy commands to run different parts of the app, or you can simply run the file and answer prompts.
+There are two ways to use it, in one way, you can type out the legacy commands to run different parts of the app, or you can simply run the file and answer prompts. The legacy command system and the updated inquirer system both do the same things, the only difference is in how it lets you input your commands.
 
 Run this in the terminal using `node run.js` and LIRI will bring up an inquirer prompt.
 
@@ -210,10 +206,10 @@ Project Link: [https://github.com/jtsai972/LIRI-Bot](https://github.com/jtsai972
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+[contributors-url]: https://github.com/jtsai972/LIRI-Bot/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
+[forks-url]: https://github.com/jtsai972/LIRI-Bot/network/members
 [stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
+[stars-url]: https://github.com/jtsai972/LIRI-Bot/stargazers
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+[issues-url]: https://github.com/jtsai972/LIRI-Bot/issues
