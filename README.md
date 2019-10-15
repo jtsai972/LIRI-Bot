@@ -195,7 +195,8 @@ Contributions are what make the open source community such an amazing place to b
 <!-- CONTACT -->
 ## Contact
 
-Jasmine - [Email Me](jtsai972@gmail.com)
+### Jasmine 
+[Github Portfolio](https://jtsai972.github.io/Github-Portfolio/) | [Website - Jtsai972.space](jtsai972.space) | [Email Me](jtsai972@gmail.com)
 
 Project Link: [https://github.com/jtsai972/LIRI-Bot](https://github.com/jtsai972/LIRI-Bot)
 
