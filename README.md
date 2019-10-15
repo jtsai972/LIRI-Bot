@@ -11,9 +11,6 @@
 -->
 
 
-
-
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -76,7 +73,6 @@ LIRI will be a command line Node.js app that takes in parameters and gives you b
 
 LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for movies.
 
-
 ### Built With
 
  * [Node Package - Axios](https://www.npmjs.com/package/axios)
@@ -87,6 +83,8 @@ LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for mov
  * [API - OMDB](http://www.omdbapi.com) 
  * [API - Bands In Town](http://www.artists.bandsintown.com/bandsintown-api)
  * [othneildrew - Best README Template](https://github.com/othneildrew/Best-README-Template)
+ 
+ [Back to ToC](#table-of-contents)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -108,6 +106,7 @@ git clone https:://github.com/jtsai972/LIRI-Bot.git
 npm install
 ```
 
+[Back to ToC](#table-of-contents)
 
 
 <!-- USAGE EXAMPLES -->
@@ -129,6 +128,8 @@ App Command | Short Description
 `spotify-this-song` | searches Spotify for info about a band or artist
 `movie-this`        | Searches for info about the movie you entered
 `do-what-it-says`   | runs the text in random.txt
+
+[Back to ToC](#table-of-contents)
 
 #### concert-this
 
@@ -171,6 +172,8 @@ LIRI will take the text inside of random.txt and then use it to call one of LIRI
   * It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
   * Edit the text in random.txt to test out the feature for movie-this and concert-this.
 
+[Back to ToC](#table-of-contents)
+
 <!-- CONTRIBUTING -->
 ## Contributing
 
@@ -182,7 +185,7 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
+[Back to ToC](#table-of-contents)
 
 <!-- CONTACT -->
 ## Contact
@@ -192,6 +195,7 @@ Contributions are what make the open source community such an amazing place to b
 
 Project Link: [https://github.com/jtsai972/LIRI-Bot](https://github.com/jtsai972/LIRI-Bot)
 
+[Back to ToC](#table-of-contents)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
@@ -204,6 +208,7 @@ Project Link: [https://github.com/jtsai972/LIRI-Bot](https://github.com/jtsai972
 * [TA - Daniel Reynolds](https://github.com/kirplink)
 * [TA - Shawn Holcomb](https://github.com/shawnholcomb)
 
+[Back to ToC](#table-of-contents)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
