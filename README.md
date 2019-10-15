@@ -200,7 +200,7 @@ Project Link: [https://github.com/jtsai972/LIRI-Bot](https://github.com/jtsai972
 * [SMU Tech Bootcamp](https://techbootcamps.smu.edu/)
 * [Othneil Drew - ReadMe Template](https://github.com/othneildrew/)
 * [Instructor - Dane Edwards](https://github.com/daneedw)
-* [TA - Cody Clark](https://github.com/codyclark2119)
+* [TA - Cody Clark](https://codyevanclark.com/)
 * [TA - Daniel Reynolds](https://github.com/kirplink)
 * [TA - Shawn Holcomb](https://github.com/shawnholcomb)
 
