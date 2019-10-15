@@ -54,6 +54,7 @@
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
+  * [Screenshot Thumbnails](#screenshot-thumbnails)
 * [Contributing](#contributing)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
@@ -74,7 +75,7 @@ LIRI will be a command line Node.js app that takes in parameters and gives you b
 LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for movies.
 
 ### Built With
-
+ * [Node.js](https://nodejs.org/en/)
  * [Node Package - Axios](https://www.npmjs.com/package/axios)
  * [Node Package - DotEnv](https://www.npmjs.com/package/dotenv)
  * [Node Package - Inquirer](https://www.npmjs.com/package/inquirer)
@@ -186,6 +187,22 @@ Contributions are what make the open source community such an amazing place to b
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+[Back to Table of Contents](#table-of-contents)
+
+### Screenshot Thumbnails
+
+<div align="center">
+  <img width="25%" src="https://raw.githubusercontent.com/jtsai972/LIRI-Bot/master/assets/images/LIRI-bot-default-spotify-movie.PNG">
+  <img width="25%" src="https://raw.githubusercontent.com/jtsai972/LIRI-Bot/master/assets/images/LIRI-bot-default-what-it-says-concert.PNG">
+  <img width="25%" src="https://raw.githubusercontent.com/jtsai972/LIRI-Bot/master/assets/images/LIRI-bot-default-what-it-says-movie.PNG">
+  <img width="25%" src="https://raw.githubusercontent.com/jtsai972/LIRI-Bot/master/assets/images/LIRI-bot-default-what-it-says-spotify.PNG">
+  <img width="25%" src="https://raw.githubusercontent.com/jtsai972/LIRI-Bot/master/assets/images/LIRI-bot-concert-this.PNG">
+  <img width="25%" src="https://raw.githubusercontent.com/jtsai972/LIRI-Bot/master/assets/images/LIRI-bot-movie-this.PNG">
+  <img width="25%" src="https://raw.githubusercontent.com/jtsai972/LIRI-Bot/master/assets/images/LIRI-bot-spotify-this.PNG">
+  <img width="25%" src="https://raw.githubusercontent.com/jtsai972/LIRI-Bot/master/assets/images/LIRI-bot-log.PNG">
+
+</div>
 
 [Back to Table of Contents](#table-of-contents)
 
