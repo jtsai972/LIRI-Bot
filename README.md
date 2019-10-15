@@ -59,7 +59,6 @@
 * [Usage](#usage)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
-* [License](#license)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
@@ -201,7 +200,16 @@ Jasmine - [Email Me](jtsai972@gmail.com)
 Project Link: [https://github.com/jtsai972/LIRI-Bot](https://github.com/jtsai972/LIRI-Bot)
 
 
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
 
+* [Trilogy - Tech Bootcamp](https://www.trilogyed.com/)
+* [SMU Tech Bootcamp](https://techbootcamps.smu.edu/)
+* [Othneil Drew - ReadMe Template](https://github.com/othneildrew/)
+* [Instructor - Dane Edwards](https://github.com/daneedw)
+* [TA - Cody Clark](https://github.com/codyclark2119)
+* [TA - Daniel Reynolds](https://github.com/kirplink)
+* [TA - Shawn Holcomb](https://github.com/shawnholcomb)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
