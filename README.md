@@ -196,12 +196,10 @@ Contributions are what make the open source community such an amazing place to b
   <img width="30%" src="https://raw.githubusercontent.com/jtsai972/LIRI-Bot/master/assets/images/LIRI-bot-default-what-it-says-movie.PNG">
   <img width="30%" src="https://raw.githubusercontent.com/jtsai972/LIRI-Bot/master/assets/images/LIRI-bot-movie-this.PNG">
   <img width="30%" src="https://raw.githubusercontent.com/jtsai972/LIRI-Bot/master/assets/images/LIRI-bot-spotify-this.PNG">
-  
-  <img width="30%" src="https://raw.githubusercontent.com/jtsai972/LIRI-Bot/master/assets/images/LIRI-bot-default-spotify-movie.PNG">
   <img width="30%" src="https://raw.githubusercontent.com/jtsai972/LIRI-Bot/master/assets/images/LIRI-bot-default-what-it-says-spotify.PNG">
   <img width="30%" src="https://raw.githubusercontent.com/jtsai972/LIRI-Bot/master/assets/images/LIRI-bot-default-what-it-says-concert.PNG">
-  
   <img width="30%" src="https://raw.githubusercontent.com/jtsai972/LIRI-Bot/master/assets/images/LIRI-bot-concert-this.PNG">
+  <img width="30%" src="https://raw.githubusercontent.com/jtsai972/LIRI-Bot/master/assets/images/LIRI-bot-default-spotify-movie.PNG">
   <img width="30%" src="https://raw.githubusercontent.com/jtsai972/LIRI-Bot/master/assets/images/LIRI-bot-log.PNG">
 
 </div>
